@@ -7,6 +7,8 @@ import pt.c01interfaces.s01knowledge.s01base.inter.IEnquirer;
 import pt.c01interfaces.s01knowledge.s01base.inter.IObjetoConhecimento;
 import pt.c01interfaces.s01knowledge.s01base.inter.IResponder;
 
+import java.util.Hashtable;
+
 public class Enquirer implements IEnquirer
 {
     IObjetoConhecimento obj;
@@ -19,27 +21,52 @@ public class Enquirer implements IEnquirer
 	@Override
 	public void connect(IResponder responder)
 	{
-        IBaseConhecimento bc = new BaseConhecimento();
+IBaseConhecimento bc = new BaseConhecimento();
 		
-		obj = bc.recuperaObjeto("tiranossauro");
+        String listaAnimais[] = bc.listaNomes();
+        
+        int animalTestado;
+        Hashtable <String, String> basePerguntas = new Hashtable<String, String>();
+        String searcher;
 
-		IDeclaracao decl = obj.primeira();
+		animal:
+        for (animalTestado = 0; animalTestado < listaAnimais.length ; animalTestado++){
+        	obj = bc.recuperaObjeto(listaAnimais[animalTestado]);
+        	IDeclaracao decl = obj.primeira();
+        	
+        	pergunta:
+			while (decl != null) {
+				String pergunta = decl.getPropriedade();
+				String respostaEsperada = decl.getValor();
+				searcher = basePerguntas.get(pergunta);
+				
+				if(searcher != null){
+					if(searcher.equalsIgnoreCase(respostaEsperada)){
+						decl = obj.proxima();
+						continue pergunta;
+					}
+					else
+						continue animal;
+				}
+				else{
+					String resposta = responder.ask(pergunta);
+					basePerguntas.put(pergunta, resposta);
+					searcher=basePerguntas.get(pergunta);
+					if(searcher.equalsIgnoreCase(respostaEsperada)){
+						decl = obj.proxima();
+						continue pergunta;
+					}
+					else
+						continue animal;
+				}
+			}
+        	break animal;
+        }
 		
-        boolean animalEsperado = true;
-		while (decl != null && animalEsperado) {
-			String pergunta = decl.getPropriedade();
-			String respostaEsperada = decl.getValor();
-			
-			String resposta = responder.ask(pergunta);
-			if (resposta.equalsIgnoreCase(respostaEsperada))
-				decl = obj.proxima();
-			else
-				animalEsperado = false;
-		}
+		if(animalTestado==listaAnimais.length)
+			animalTestado--;
 		
-		boolean acertei = responder.finalAnswer("tiranossauro");
-		
-		if (acertei)
+		if (responder.finalAnswer(listaAnimais[animalTestado]))
 			System.out.println("Oba! Acertei!");
 		else
 			System.out.println("fuem! fuem! fuem!");
