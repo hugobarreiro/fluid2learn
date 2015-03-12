@@ -1,6 +1,6 @@
 package pt.c02classes.s01knowledge.s02app.actors;
 
-import java.util.Scanner;
+import java.util.*;
 
 import pt.c02classes.s01knowledge.s01base.inter.IEnquirer;
 import pt.c02classes.s01knowledge.s01base.inter.IResponder;
@@ -14,6 +14,13 @@ public class EnquirerMaze implements IEnquirer {
 	}
 	
 	public boolean discover() {
+		/*String direcoes[] ={"norte","oeste","sul","leste"};
+		boolean SaidaEncontrada=false;
+		Stack caminho = new Stack();
+		
+		while(!SaidaEncontrada){
+			
+		}*/
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.print("(P)ergunta, (M)ovimento ou (F)im? ");
