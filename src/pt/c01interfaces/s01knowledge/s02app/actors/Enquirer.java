@@ -21,7 +21,7 @@ public class Enquirer implements IEnquirer
 	@Override
 	public void connect(IResponder responder)
 	{
-IBaseConhecimento bc = new BaseConhecimento();
+		IBaseConhecimento bc = new BaseConhecimento();
 		
         String listaAnimais[] = bc.listaNomes();
         
