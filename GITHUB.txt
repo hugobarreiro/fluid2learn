@@ -1,0 +1,14 @@
+MC302 2015.1
+
+Turmas A/B/C/D
+
+
+
+Daniel Pinheiro Cunha	RA 140561 
+Victor Hugo Barreiro	RA 118876
+
+
+
+Link para o fork do repositorio original
+
+https://github.com/hugobarreiro/fluid2learn
