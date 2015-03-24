@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_zWeo0NHGEeSg8sRJYIKbKQ" name="Model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_zWeo0dHGEeSg8sRJYIKbKQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0Ds7MNHGEeSg8sRJYIKbKQ" name="ResponderRampage">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0Ds7MdHGEeSg8sRJYIKbKQ" name="maxTime"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0Ds7MtHGEeSg8sRJYIKbKQ" name="points"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0Ds7M9HGEeSg8sRJYIKbKQ" name="life"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0Ds7NNHGEeSg8sRJYIKbKQ" name="lastFloor"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0Ds7NdHGEeSg8sRJYIKbKQ" name="addLife" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0Ds7NtHGEeSg8sRJYIKbKQ" name="addPoints" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0DuJUNHGEeSg8sRJYIKbKQ" name="EnquirerRampage">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0DuJUdHGEeSg8sRJYIKbKQ" name="time"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0DuJUtHGEeSg8sRJYIKbKQ" name="currentFloor"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0DuJU9HGEeSg8sRJYIKbKQ" name="checkTime"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_dpe7cNHHEeSg8sRJYIKbKQ" name="explore"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3nGUANHHEeSg8sRJYIKbKQ" name="attack"/>
+  </packagedElement>
+</uml:Model>
