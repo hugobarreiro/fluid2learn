@@ -26,7 +26,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_0ECz4NGOEeSU6btuCxP9ag" name="EnquirerMaze">
       <generalization xmi:type="uml:Generalization" xmi:id="_7-b3kNGOEeSU6btuCxP9ag" general="_m9w6INGOEeSU6btuCxP9ag"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Jr_sYNGSEeSU6btuCxP9ag" name="caminho" visibility="private" type="_f6quANGSEeSU6btuCxP9ag"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_mejRwNGSEeSU6btuCxP9ag" name="direcoes" visibility="private">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mejRwNGSEeSU6btuCxP9ag" name="direcoes[]" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OiyxUNGUEeSU6btuCxP9ag" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjFFMNGUEeSU6btuCxP9ag" value="1"/>
@@ -47,6 +47,178 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_HhcyUNGQEeSU6btuCxP9ag" name="IResponder"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_f6quANGSEeSU6btuCxP9ag" name="Stack"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_otuBkNGeEeSU6btuCxP9ag" name="IObjetoConhecimento"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_00MEINGeEeSU6btuCxP9ag" name="IStatistics"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5voZgNGVEeSU6btuCxP9ag" name="ResponderAnimals">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8KrfoNGVEeSU6btuCxP9ag" general="_3JZXENGVEeSU6btuCxP9ag"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eFSDQNGeEeSU6btuCxP9ag" name="animal" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_v-MlkNGeEeSU6btuCxP9ag" name="estatisticas" visibility="private" type="_00MEINGeEeSU6btuCxP9ag"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Chm2YNGfEeSU6btuCxP9ag" name="jaPerguntou" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_y8FbINIvEeS-tvTMrr6anw" name="questioncounter" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_nZv7cNGiEeSU6btuCxP9ag" name="ResponderAnimals">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_u86x8NGiEeSU6btuCxP9ag" name="estatisticas" type="_00MEINGeEeSU6btuCxP9ag"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1ZLDsNGiEeSU6btuCxP9ag" name="ResponderAnimals">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4g97ENGiEeSU6btuCxP9ag" name="estatisticas" type="_00MEINGeEeSU6btuCxP9ag"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8WT08NGiEeSU6btuCxP9ag" name="animal">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N-x7gNInEeS-tvTMrr6anw" name="scenario">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N-x7gdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N-5QQNInEeS-tvTMrr6anw" name="move">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N-5QQdInEeS-tvTMrr6anw" name="direction">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N-5QQtInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N--IwNInEeS-tvTMrr6anw" name="finalAnswer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N--IwdInEeS-tvTMrr6anw" name="answer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N--IwtInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N_H5wNInEeS-tvTMrr6anw" name="ask">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N_H5wdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N_H5wtInEeS-tvTMrr6anw" name="questao">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4qOQoNGVEeSU6btuCxP9ag" name="ResponderMaze">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7cMB8NGVEeSU6btuCxP9ag" general="_3JZXENGVEeSU6btuCxP9ag"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iuoIwNGlEeSU6btuCxP9ag" name="mazeMatrix[]" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7_iMUNGlEeSU6btuCxP9ag" name="nColunas" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_9__oMNGlEeSU6btuCxP9ag"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ACkj8NGmEeSU6btuCxP9ag" name="linhaAtual" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_A6XHkNGmEeSU6btuCxP9ag"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_FKCNANGmEeSU6btuCxP9ag" name="colunaAtual" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_HToWwNGmEeSU6btuCxP9ag"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_up-FsNIvEeS-tvTMrr6anw" name="nLinhas" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OWzZ8NInEeS-tvTMrr6anw" name="move">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OW0BANInEeS-tvTMrr6anw" name="direction">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OW0BAdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OW7VwNInEeS-tvTMrr6anw" name="ask">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OW7VwdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OW7VwtInEeS-tvTMrr6anw" name="questao">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OW_nMNInEeS-tvTMrr6anw" name="scenario">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OW_nMdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OXD4oNInEeS-tvTMrr6anw" name="finalAnswer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OXD4odInEeS-tvTMrr6anw" name="answer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OXD4otInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1or6YNImEeS-tvTMrr6anw" name="EnquirerRampage">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Asm60NInEeS-tvTMrr6anw" general="_m9w6INGOEeSU6btuCxP9ag"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_TWtv4NIvEeS-tvTMrr6anw" name="timemax"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_GLoIQNInEeS-tvTMrr6anw" name="discover">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GLoIQdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_L35N4NIvEeS-tvTMrr6anw" name="checktime"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6x86QNImEeS-tvTMrr6anw" name="ResponderRampage">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BZDKENInEeS-tvTMrr6anw" general="_3JZXENGVEeSU6btuCxP9ag"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_fYiDUNIsEeS-tvTMrr6anw" name="points" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_rSRRcNIsEeS-tvTMrr6anw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1A22oNIsEeS-tvTMrr6anw" name="life" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KedAoNItEeS-tvTMrr6anw" name="time" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_81tgwNIxEeS-tvTMrr6anw" name="statistics" visibility="private" type="_00MEINGeEeSU6btuCxP9ag"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OqWoENInEeS-tvTMrr6anw" name="ask">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OqWoEdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OqWoEtInEeS-tvTMrr6anw" name="questao">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OqfK8NInEeS-tvTMrr6anw" name="scenario">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OqfK8dInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OqkDcNInEeS-tvTMrr6anw" name="move">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OqkqgNInEeS-tvTMrr6anw" name="direction">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OqkqgdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OqwQsNInEeS-tvTMrr6anw" name="finalAnswer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Oqw3wNInEeS-tvTMrr6anw" name="answer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Oqw3wdInEeS-tvTMrr6anw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dUndENInEeS-tvTMrr6anw" name="ResponderRampage">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_dUndEdInEeS-tvTMrr6anw" name="estatisticas" type="_00MEINGeEeSU6btuCxP9ag"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_dUndEtInEeS-tvTMrr6anw" name="city">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_A8CEoNIsEeS-tvTMrr6anw" name="ChangeLife" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VU6CQNIsEeS-tvTMrr6anw" name="life">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XpJVwNIsEeS-tvTMrr6anw" name="ChangePoints" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cVNcQNIsEeS-tvTMrr6anw" name="points">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3JZXENGVEeSU6btuCxP9ag" name="ResponderGeneric">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_m7sqUNGeEeSU6btuCxP9ag" name="obj" visibility="private" type="_otuBkNGeEeSU6btuCxP9ag"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_K5P58NGjEeSU6btuCxP9ag" name="scenario">
@@ -79,52 +251,6 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_otuBkNGeEeSU6btuCxP9ag" name="IObjetoConhecimento"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_00MEINGeEeSU6btuCxP9ag" name="IStatistics"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_5voZgNGVEeSU6btuCxP9ag" name="ResponderAnimals">
-      <generalization xmi:type="uml:Generalization" xmi:id="_8KrfoNGVEeSU6btuCxP9ag" general="_3JZXENGVEeSU6btuCxP9ag"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_eFSDQNGeEeSU6btuCxP9ag" name="animal" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_v-MlkNGeEeSU6btuCxP9ag" name="estatisticas" visibility="private" type="_00MEINGeEeSU6btuCxP9ag"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_6LuwkNGeEeSU6btuCxP9ag" name="questioncounter" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Chm2YNGfEeSU6btuCxP9ag" name="jaPerguntou" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_nZv7cNGiEeSU6btuCxP9ag" name="ResponderAnimals">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_u86x8NGiEeSU6btuCxP9ag" name="estatisticas" type="_00MEINGeEeSU6btuCxP9ag"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_1ZLDsNGiEeSU6btuCxP9ag" name="ResponderAnimals">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4g97ENGiEeSU6btuCxP9ag" name="estatisticas" type="_00MEINGeEeSU6btuCxP9ag"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8WT08NGiEeSU6btuCxP9ag" name="animal">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_4qOQoNGVEeSU6btuCxP9ag" name="ResponderMaze">
-      <generalization xmi:type="uml:Generalization" xmi:id="_7cMB8NGVEeSU6btuCxP9ag" general="_3JZXENGVEeSU6btuCxP9ag"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iuoIwNGlEeSU6btuCxP9ag" name="mazeMatrix[]" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EChar"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_vh9RUNGlEeSU6btuCxP9ag" name="nLinhas" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_4Fy6oNGlEeSU6btuCxP9ag"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_7_iMUNGlEeSU6btuCxP9ag" name="nColunas" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_9__oMNGlEeSU6btuCxP9ag"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ACkj8NGmEeSU6btuCxP9ag" name="linhaAtual" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_A6XHkNGmEeSU6btuCxP9ag"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_FKCNANGmEeSU6btuCxP9ag" name="colunaAtual">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_HToWwNGmEeSU6btuCxP9ag"/>
-      </ownedAttribute>
-    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xi4rcNGeEeSU6btuCxP9ag">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xltV8NGeEeSU6btuCxP9ag" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
@@ -132,7 +258,5 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
   </uml:Model>
-  <ActionLanguage:TextualRepresentation xmi:id="_xmjqgNGeEeSU6btuCxP9ag" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_9rbKkNGeEeSU6btuCxP9ag" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_wpb2wNGlEeSU6btuCxP9ag" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_29xdANIxEeS-tvTMrr6anw" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
 </xmi:XMI>
